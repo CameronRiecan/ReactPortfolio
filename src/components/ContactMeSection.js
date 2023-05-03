@@ -31,7 +31,12 @@ const LandingSection = () => {
     onSubmit: (values) => {
       submit("https://localhost:3000/", values)
     },
-    validationSchema: Yup.object({}),
+    validationSchema: Yup.object({
+      firstName:,
+      email:,
+      type:,
+      comment:,
+    }),
   });
 
   return (
