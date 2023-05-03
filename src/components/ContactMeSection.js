@@ -73,11 +73,11 @@ const LandingSection = () => {
               <FormControl>
                 <FormLabel htmlFor="type">Type of enquiry</FormLabel>
                 <Select id="type" name="type">
-                  <option value="hireMe">Freelance project proposal</option>
-                  <option value="openSource">
+                  <option value="hireMe" style={{ backgroundColor: "#805AD5" }}>Freelance project proposal</option>
+                  <option value="openSource" style={{ backgroundColor: "#805AD5" }}>
                     Open source consultancy session
                   </option>
-                  <option value="other">Other</option>
+                  <option value="other" style={{ backgroundColor: "#805AD5" }}>Other</option>
                 </Select>
               </FormControl>
               <FormControl isInvalid={false}>
