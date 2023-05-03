@@ -22,7 +22,12 @@ const LandingSection = () => {
   const { onOpen } = useAlertContext();
 
   const formik = useFormik({
-    initialValues: {},
+    initialValues: {
+      firstName: "",
+      email: "",
+      type:"hireMe",
+      comment: "",
+    },
     onSubmit: (values) => {},
     validationSchema: Yup.object({}),
   });
