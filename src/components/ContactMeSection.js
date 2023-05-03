@@ -32,10 +32,10 @@ const LandingSection = () => {
       submit("https://localhost:3000/", values)
     },
     validationSchema: Yup.object({
-      firstName:,
-      email:,
-      type:,
-      comment:,
+      firstName: Yup.string().required("Required"),
+      email: Yup.string().email("Invalid email Address").required("Required"),
+      type: Yup.string(),
+      comment: Yup.string().min(25, "Must be at least 25 characters").required("Required"),
     }),
   });
 
