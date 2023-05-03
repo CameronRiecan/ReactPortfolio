@@ -30,7 +30,6 @@ const Card = ({ title, description, imageSrc }) => {
       </Box>
     </Box>
   );
-
 };
 
 export default Card;
