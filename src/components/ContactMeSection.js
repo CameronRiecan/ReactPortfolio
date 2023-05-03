@@ -28,7 +28,9 @@ const LandingSection = () => {
       type:"hireMe",
       comment: "",
     },
-    onSubmit: (values) => {},
+    onSubmit: (values) => {
+      submit("https://localhost:3000/", values)
+    },
     validationSchema: Yup.object({}),
   });
 
