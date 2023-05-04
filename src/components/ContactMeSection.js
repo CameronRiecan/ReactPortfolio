@@ -67,7 +67,7 @@ const LandingSection = () => {
                 />
                 <FormErrorMessage>{formik.errors.firstName}</FormErrorMessage>
               </FormControl>
-              <FormControl isInvalid={false}>
+              <FormControl isInvalid={formik.touched.email && formik.errors.email}>
                 <FormLabel htmlFor="email">Email Address</FormLabel>
                 <Input
                   {...emailProps}
@@ -75,7 +75,7 @@ const LandingSection = () => {
                   name="email"
                   type="email"
                 />
-                <FormErrorMessage></FormErrorMessage>
+                <FormErrorMessage>{formik.errors.email}</FormErrorMessage>
               </FormControl>
               <FormControl>
                 <FormLabel htmlFor="type">Type of enquiry</FormLabel>
