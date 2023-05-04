@@ -39,6 +39,11 @@ const LandingSection = () => {
     }),
   });
 
+  const firstNameProps = formik.getFieldProps("firstName");
+  const emailProps = formik.getFieldProps("email");
+  const typeProps = formik.getFieldProps("type");
+  const commentProps = formik.getFieldProps("comment");
+
   return (
     <FullScreenSection
       isDarkBackground
@@ -56,6 +61,7 @@ const LandingSection = () => {
               <FormControl isInvalid={false}>
                 <FormLabel htmlFor="firstName">Name</FormLabel>
                 <Input
+                  {...firstNameProps}
                   id="firstName"
                   name="firstName"
                 />
@@ -64,6 +70,7 @@ const LandingSection = () => {
               <FormControl isInvalid={false}>
                 <FormLabel htmlFor="email">Email Address</FormLabel>
                 <Input
+                  {...emailProps}
                   id="email"
                   name="email"
                   type="email"
@@ -72,7 +79,11 @@ const LandingSection = () => {
               </FormControl>
               <FormControl>
                 <FormLabel htmlFor="type">Type of enquiry</FormLabel>
-                <Select id="type" name="type">
+                <Select
+                  {...typeProps} 
+                  id="type"
+                  name="type"
+                >
                   <option value="hireMe" style={{ backgroundColor: "#805AD5" }}>Freelance project proposal</option>
                   <option value="openSource" style={{ backgroundColor: "#805AD5" }}>
                     Open source consultancy session
@@ -83,6 +94,7 @@ const LandingSection = () => {
               <FormControl isInvalid={false}>
                 <FormLabel htmlFor="comment">Your message</FormLabel>
                 <Textarea
+                  {...commentProps}
                   id="comment"
                   name="comment"
                   height={250}
