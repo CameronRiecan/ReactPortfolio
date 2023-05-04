@@ -28,8 +28,8 @@ const LandingSection = () => {
       type:"hireMe",
       comment: "",
     },
-    onSubmit: (values) => {
-      submit("https://localhost:3000/", values)
+    onSubmit: (values, { resetForm }) => {
+      submit("https://localhost:3000/", values);
     },
     validationSchema: Yup.object({
       firstName: Yup.string().required("Required"),
@@ -43,6 +43,15 @@ const LandingSection = () => {
   const emailProps = formik.getFieldProps("email");
   const typeProps = formik.getFieldProps("type");
   const commentProps = formik.getFieldProps("comment");
+
+  useEffect(() => {
+    if (response) {
+      onOpen(response.type, response.message);
+      if (response.type === "success") {
+        formik.resetForm();
+      };
+    }
+  }, [response]);
 
   return (
     <FullScreenSection
